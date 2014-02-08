@@ -1,5 +1,8 @@
 # node Krawler
 
+Fast and lightweight web crawler with built-in cheerio, xml and json parser.
+And of course ... the best :)
+
 ## How to install
 ```
 npm install krawler
