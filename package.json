@@ -49,7 +49,7 @@
     "chai": "~1.9.0"
   },
   "scripts": {
-    "test": "mocha test/test.js"
+    "test": "mocha test/index"
   },
   "engines": [
     "node >=0.8.x"
@@ -57,5 +57,5 @@
   "directories": {
     "lib": "lib"
   },
-  "main": "./lib/krawler"
+  "main": "./lib/index"
 }
