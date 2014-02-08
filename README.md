@@ -1,4 +1,4 @@
-# node Krawler
+# node Krawler [![Build Status](https://travis-ci.org/ondrs/node-krawler.png?branch=master)](https://travis-ci.org/ondrs/node-krawler)
 
 Fast and lightweight web crawler with built-in cheerio, xml and json parser.
 And of course ... the best :)
