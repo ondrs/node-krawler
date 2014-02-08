@@ -81,12 +81,12 @@ crawler
 ## Promises
 
 If your program flow is based on promises you can easily attach Krawler to your promise chain.
-Method fetchUrl() returns a Q.promise. When the promise is full filled, callback function is called with and result object.
+Method fetchUrl() returns a Q.promise. When the promise is full filled, callback function is called with a result object.
 
 Object has two properties
 
 * data - parsed/unparsed content of the web page
-* response - result of the mikeal/request
+* response - response object from mikeal/request
 
 
 ```javascript
