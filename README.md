@@ -11,6 +11,8 @@ npm install krawler
 ## Basic example
 
 ```javascript
+var Krawler = require('krawler')
+
 var urls = [
     'http://ondraplsek.cz'
 ];
