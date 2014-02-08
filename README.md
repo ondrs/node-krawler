@@ -1,6 +1,6 @@
 # node Krawler [![Build Status](https://travis-ci.org/ondrs/node-krawler.png?branch=master)](https://travis-ci.org/ondrs/node-krawler)
 
-Fast and lightweight promise/event based web crawler with built-in cheerio, xml and json parser.
+Fast and lightweight promise/event based web krawler with built-in cheerio, xml and json parser.
 And of course ... the best :)
 
 ## How to install
@@ -15,9 +15,9 @@ var urls = [
     'http://ondraplsek.cz'
 ];
 
-var crawler = new Krawler;
+var krawler = new Krawler;
 
-crawler
+krawler
     .queue(urls)
     .on('data', function($, url, response) {
         // $ - cheerio instance
@@ -38,7 +38,7 @@ crawler
 Krawler provides following API:
 
 ```javascript
-var crawler = new Krawler({
+var krawler = new Krawler({
     maxConnections: 10, // number of max simultaneously opened connections, default 10
     parser: 'cheerio',  // web page parser, default 'cheerio'
                         // another options are xml, json or false (no parser will be used, raw data will be returned)
@@ -59,13 +59,13 @@ var urls = [
     'https://graph.facebook.com/microsoft',
 ];
 
-var crawler = new Krawler({
+var krawler = new Krawler({
     maxConnections: 5,
     parser: 'json',
     forceUTF8: true
 });
 
-crawler
+krawler
     .on('data', function(json, url, response) {
         // do something with json...
     })
@@ -90,11 +90,11 @@ Object has two properties
 
 
 ```javascript
-var crawler = new Krawler;
+var krawler = new Krawler;
 
 findUrl()
 .then(function(url) {
-    return crawler.fetchUrl(url);
+    return krawler.fetchUrl(url);
 })
 .then(function(result) {
     // in this case result.data in a cheerio instance
