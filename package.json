@@ -1,7 +1,7 @@
 {
   "name": "krawler",
   "version": "0.1.0",
-  "description": "Crawler is a web spider written with Nodejs. It gives you the full power of jQuery on the server to parse a big number of pages as they are downloaded, asynchronously.",
+  "description": "Fast and lightweight web crawler with built-in cheerio, xml and json parser.",
   "keywords": [
     "dom",
     "javascript",
@@ -9,7 +9,10 @@
     "spider",
     "scraper",
     "scraping",
-    "cheerio"
+    "cheerio",
+    "html",
+    "xml",
+    "json"
   ],
   "maintainers": [
     {
@@ -21,7 +24,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/ondrs/node-krawler/blob/master/license.md"
+      "url": "http://github.com/ondrs/node-krawler/blob/master/LICENSE.md"
     }
   ],
   "repository":
