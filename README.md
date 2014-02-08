@@ -26,8 +26,8 @@ krawler
         // url of the current webpage
         // response object from mikeal/request
     })
-    .on('err', function(err, url) {
-        // there has been an 'err' on 'url'
+    .on('error', function(err, url) {
+        // there has been an 'error' on 'url'
     })
     .on('end', function() {
         // all URLs has been fetched
@@ -71,8 +71,8 @@ krawler
     .on('data', function(json, url, response) {
         // do something with json...
     })
-    .on('err', function(err, url) {
-        // there has been an 'err' on 'url'
+    .on('error', function(err, url) {
+        // there has been an 'error' on 'url'
     })
     .on('end', function() {
         // all URLs has been fetched
