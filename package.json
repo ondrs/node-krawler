@@ -13,7 +13,9 @@
     "cheerio",
     "html",
     "xml",
-    "json"
+    "json",
+    "promise",
+    "event"
   ],
   "maintainers": [
     {
