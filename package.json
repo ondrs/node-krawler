@@ -1,0 +1,56 @@
+{
+  "name": "krawler",
+  "version": "0.3.0",
+  "description": "Crawler is a web spider written with Nodejs. It gives you the full power of jQuery on the server to parse a big number of pages as they are downloaded, asynchronously.",
+  "keywords": [
+    "dom",
+    "javascript",
+    "crawling",
+    "spider",
+    "scraper",
+    "scraping",
+    "cheerio"
+  ],
+  "maintainers": [
+    {
+      "name": "Ondrej Plsek",
+      "email": "plsek.o@gmail.com",
+      "url": "http://ondraplsek.cz/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/ondrs/node-krawler/blob/master/license.md"
+    }
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/ondrs/node-krawler.git"
+  }
+  ,
+  "dependencies": {
+    "underscore": "~1.5.2"
+    "async": "0.2.x",
+    "xml2js": "0.2.x",
+    "q": "~1.0.0",
+    "cheerio": "~0.13.1",
+    "jschardet": "~1.1.0",
+    "iconv": "~2.0.7",
+    "request": "~2.33.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  },
+  "scripts": {
+    "test": "node test/testrunner.js"
+  },
+  "engines": [
+    "node >=0.10.x"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "./lib/krawler"
+}
