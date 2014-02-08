@@ -25,7 +25,7 @@ crawler
         // response object from mikeal/request
     })
     .on('err', function(err, url) {
-        // there has ben an 'err' on 'url'
+        // there has been an 'err' on 'url'
     })
     .on('end', function() {
         // all URLs has been fetched
@@ -70,7 +70,7 @@ crawler
         // do something with json...
     })
     .on('err', function(err, url) {
-        // there has ben an 'err' on 'url'
+        // there has been an 'err' on 'url'
     })
     .on('end', function() {
         // all URLs has been fetched
@@ -85,7 +85,7 @@ Method fetchUrl() returns a Q.promise. When the promise is full filled, callback
 
 Object has two properties
 
-* data - parsed/unparsed content of the web page
+* data - parsed/raw content of the web page base on parser setting
 * response - response object from mikeal/request
 
 
