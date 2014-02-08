@@ -1,4 +1,4 @@
-var Krawler = require(__dirname + '/../lib/krawler.js');
+var Krawler = require(__dirname + '/../lib/index');
 var expect = require('chai').expect;
 
 describe('Krawler tests', function() {
