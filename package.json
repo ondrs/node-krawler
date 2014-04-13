@@ -36,14 +36,14 @@
     "url": "https://github.com/ondrs/node-krawler.git"
   },
   "dependencies": {
-    "underscore": "~1.5.2",
-    "async": "0.2.x",
-    "xml2js": "0.2.x",
+    "underscore": "~1.6.0",
+    "async": "~0.7.0",
+    "xml2js": "~0.4.2",
     "q": "~1.0.0",
-    "cheerio": "~0.13.1",
+    "cheerio": "~0.15.0",
     "jschardet": "~1.1.0",
     "iconv": "~2.0.7",
-    "request": "~2.33.0"
+    "request": "~2.34.0"
   },
   "devDependencies": {
     "chai": "~1.9.0"
