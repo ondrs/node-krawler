@@ -42,7 +42,7 @@
     "cheerio": "~0.15.0",
     "jschardet": "~1.1.0",
     "request": "~2.34.0",
-    "iconv-lite": "^0.2.11"
+    "encoding": "^0.1.7"
   },
   "devDependencies": {
     "chai": "~1.9.0"
