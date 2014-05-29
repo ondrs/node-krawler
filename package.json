@@ -42,7 +42,6 @@
     "q": "~1.0.0",
     "cheerio": "~0.15.0",
     "jschardet": "~1.1.0",
-    "iconv": "~2.0.7",
     "request": "~2.34.0"
   },
   "devDependencies": {
