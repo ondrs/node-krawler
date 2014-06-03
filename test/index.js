@@ -182,5 +182,13 @@ describe('Krawler tests', function() {
 
   });
 
+  it('should fail if objects lacks a url property', function () {
+    var crawler = new Krawler;
+    var singleObject = {
+      name: 'foo'
+    }
+    expect(function() { crawler.queue(singleObject)}).to.throw(Error);
+  });
+
 });
 
