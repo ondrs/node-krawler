@@ -79,6 +79,35 @@ krawler
     });
 ```
 
+## Objects Example
+
+Instead of pure strings or an array of strings, one can also pass an object or
+an array of objects who each have the url as a property named 'url'. This enables you to access the properties of the url object later in the process. Example:
+
+```javascript
+var Krawler = require('krawler')
+
+var urls = [
+    { name: 'SomeSite', url: 'http://ondraplsek.cz' }
+];
+
+var krawler = new Krawler;
+
+krawler
+    .queue(urls)
+    .on('data', function($, url, response) {
+        // $ - cheerio instance
+        // url - the object which also contains the url property
+        // response - object from mikeal/request
+        // you can access object properties here, e.g. url.name = 'SomeSite'
+    })
+    .on('error', function(err, url) {
+        // there has been an 'error' on 'url'
+    })
+    .on('end', function() {
+        // all URLs has been fetched
+    });
+```
 
 ## Promises
 

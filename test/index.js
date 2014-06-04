@@ -80,7 +80,7 @@ describe('Krawler tests', function() {
     crawler
       .queue(urls)
       .on('data', function(data, url, response) {
-        fetched.push(urls);
+        fetched.push(url);
       })
       .on('error', function(err, url) {
         done(err);
@@ -88,25 +88,27 @@ describe('Krawler tests', function() {
       .on('end', function() {
         expect(urls.length).to.be.equal(fetched.length);
         done();
-      })
+      });
 
   });
 
-  it('should fetch sing HTML page in queue', function(done) {
+  it('should fetch single HTML page in queue', function(done) {
 
     var crawler = new Krawler;
+    var resultUrl;
 
     crawler
-      .queue('https://www.google.cz')
+      .queue('http://www.google.cz')
       .on('data', function(data, url, response) {
-        expect(url).to.be.equal('https://www.google.cz');
+        resultUrl = url;
       })
       .on('error', function(err, url) {
         done(err);
       })
       .on('end', function() {
+        expect(resultUrl).to.equal('http://www.google.cz');
         done();
-      })
+      });
 
   });
 
@@ -126,6 +128,66 @@ describe('Krawler tests', function() {
         done();
       });
 
+  });
+
+  it('should fetch single object with a url property', function(done) {
+
+    var crawler = new Krawler;
+    var singleObject = {
+      name: 'foo',
+      url: 'http://www.google.com'
+    }
+    var resultObject;
+
+    crawler
+      .queue(singleObject)
+      .on('data', function(data, url, response) {
+        resultObject = url;
+      })
+      .on('error', function(err, url) {
+        done(err);
+      })
+      .on('end', function() {
+        expect(resultObject.name).to.equal('foo');
+        done();
+      });
+
+  });
+
+  it('should fetch an array of objects with url properties', function(done) {
+
+    var urls = [{
+        name: 'foo',
+        url: 'http://www.google.com'
+      },
+      {
+        name: 'bar',
+        url: 'http://www.google.cz'
+      }],
+      fetched = [],
+      crawler = new Krawler;
+
+    crawler
+      .queue(urls)
+      .on('data', function(data, url, response) {
+        fetched.push(url);
+      })
+      .on('error', function(err, url) {
+        done(err);
+      })
+      .on('end', function() {
+        expect(urls.length).to.equal(fetched.length);
+        done();
+      });
+
+  });
+
+  it('should fail if objects lacks a url property', function () {
+    var crawler = new Krawler;
+    var singleObject = {
+      name: 'foo'
+    }
+    expect(function() { crawler.queue(singleObject)}).to.throw(Error);
   });
 
 });

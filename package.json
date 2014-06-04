@@ -30,8 +30,7 @@
       "url": "http://github.com/ondrs/node-krawler/blob/master/LICENSE.md"
     }
   ],
-  "repository":
-  {
+  "repository": {
     "type": "git",
     "url": "https://github.com/ondrs/node-krawler.git"
   },
@@ -42,8 +41,8 @@
     "q": "~1.0.0",
     "cheerio": "~0.15.0",
     "jschardet": "~1.1.0",
-    "iconv": "~2.0.7",
-    "request": "~2.34.0"
+    "request": "~2.34.0",
+    "encoding": "^0.1.7"
   },
   "devDependencies": {
     "chai": "~1.9.0"
