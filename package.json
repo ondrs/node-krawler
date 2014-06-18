@@ -1,6 +1,6 @@
 {
   "name": "krawler",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Fast and lightweight web crawler with built-in cheerio, xml and json parser.",
   "keywords": [
     "dom",

@@ -68,11 +68,43 @@ var krawler = new Krawler({
 });
 
 krawler
+    .queue(urls)
     .on('data', function(json, url, response) {
         // do something with json...
     })
     .on('error', function(err, url) {
         // there has been an 'error' on 'url'
+    })
+    .on('end', function() {
+        // all URLs has been fetched
+    });
+```
+
+
+## Queue options
+
+After Krawler emits the 'data' event, it automatically continues to a next url address. It does not care if the result was processed or not.
+If you would like to have a full control over the result handling, you can turn on the custom callback option.
+Then you can control the program flow by invoking your callback. Don't forget to call it in every case, otherwise the queue will stuck.
+
+var queueOptions = {
+    customCallback: true
+};
+
+krawler
+    .queue(urls, queueOptions)
+    .on('data', function($, url, response, callback) {
+
+        // expensive operation
+        downloadAllInternet
+            .then(function() {
+                // ...
+            })
+            .fin(callback); // always call the callback
+    })
+    .on('error', function(err, url, callback) {
+        // there has been an 'error' on 'url'
+        callback();
     })
     .on('end', function() {
         // all URLs has been fetched

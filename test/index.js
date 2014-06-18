@@ -92,6 +92,43 @@ describe('Krawler tests', function() {
 
   });
 
+
+  it('should fetch several HTML pages in queue with custom queue callback', function(done) {
+
+    var urls = [],
+      fetched = [],
+      queueOptions = {
+        customCallback: true
+      },
+      counter = 0;
+      crawler = new Krawler;
+
+    for(var i = 0; i < 3; ++i) {
+      urls.push('https://www.google.cz/?q=' + i);
+    }
+
+
+    crawler
+      .queue(urls, queueOptions)
+      .on('data', function(data, url, response, callback) {
+        fetched.push(url);
+        setTimeout(function() {
+          ++counter;
+          callback();
+        }, 3000);
+      })
+      .on('error', function(err, url, callback) {
+        done(err);
+      })
+      .on('end', function() {
+        expect(urls.length).to.be.equal(fetched.length);
+        expect(urls.length).to.be.equal(counter);
+        done();
+      });
+
+  });
+
+
   it('should fetch single HTML page in queue', function(done) {
 
     var crawler = new Krawler;
