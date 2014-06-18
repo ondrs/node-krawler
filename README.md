@@ -87,6 +87,8 @@ After Krawler emits the 'data' event, it automatically continues to a next url a
 If you would like to have a full control over the result handling, you can turn on the custom callback option.
 Then you can control the program flow by invoking your callback. Don't forget to call it in every case, otherwise the queue will stuck.
 
+
+```javascript
 var queueOptions = {
     customCallback: true
 };
