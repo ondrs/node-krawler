@@ -227,5 +227,9 @@ describe('Krawler tests', function() {
     expect(function() { crawler.queue(singleObject)}).to.throw(Error);
   });
 
+  it.skip('should get gzipped content', function () {
+    // TODO: ...
+  });
+
 });
 
